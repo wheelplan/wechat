@@ -5,9 +5,9 @@ import (
 )
 
 var client Client = Client{
-	Corpid:    "wwd327d0ea50c0dae0",
-	Appsecret: "1kJw7t38aUxb3doG7IaLGXiX6DGobUllCLvoMf1eg_8",
-	Agentid:   "1000008",
+	Corpid:    "wwd327d0ea50c0da**",
+	Appsecret: "1kJw7t38aUxb3doG7IaLGXiX6DGobUllCLvoMf1eg**",
+	Agentid:   "10000**",
 	Touser:    "@all",
 }
 
