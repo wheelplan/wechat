@@ -37,7 +37,7 @@ var client := Client{
 
 card := Card{
     Title: "XXXXX",
-    Description: "<div>XXXXX<div class=\\\"highlight\\\">                           ☀️ I hope everything goes well .</div>",
+    Description: "<div>XXXXX</div">
     Url: "https://XXXXX.com",
     //Btntxt: "more",
 }
