@@ -1,4 +1,4 @@
-package wechat
+package wechats
 
 type Client struct {
 	Corpid    string `yaml:"corpid"`

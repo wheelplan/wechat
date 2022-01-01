@@ -1,4 +1,4 @@
-package wechat
+package wechats
 
 import (
 	"encoding/json"
