@@ -4,14 +4,14 @@ import (
 	"time"
 )
 
-var client Client = Client{
+/*var client Client = Client{
 	Corpid:    "wwd327d0ea50c0da**",
 	Appsecret: "1kJw7t38aUxb3doG7IaLGXiX6DGobUllCLvoMf1eg**",
 	Agentid:   "10000**",
 	Touser:    "@all",
-}
+}*/
 
-func BuyDogeCard(executedQty, avgPrice, cumQuote string) (err error) {
+func (c Client) BuyDogeCard(executedQty, avgPrice, cumQuote string) (err error) {
 
 	//executed := fmt.Sprintf("%v", executedQty)
 	//avg := fmt.Sprintf("%v", avgPrice)
@@ -29,13 +29,13 @@ func BuyDogeCard(executedQty, avgPrice, cumQuote string) (err error) {
 		//Btntxt: "more",
 	}
 
-	err = client.SendCard(card)
+	err = c.SendCard(card)
 
 	return
 
 }
 
-func SellDogeCard(executedQty, balance string) (err error) {
+func (c Client) SellDogeCard(executedQty, balance string) (err error) {
 
 	//executed := fmt.Sprintf("%v", executedQty)
 	//avg := fmt.Sprintf("%v", avgPrice)
@@ -52,13 +52,13 @@ func SellDogeCard(executedQty, balance string) (err error) {
 		//Btntxt: "more",
 	}
 
-	err = client.SendCard(card)
+	err = c.SendCard(card)
 
 	return
 
 }
 
-func PriceWarnCard(coin, price string) (err error) {
+func (c Client) PriceWarnCard(coin, price string) (err error) {
 
 	nowtime := time.Now().Format("2006-01-02 15:04:05 .000")
 
@@ -71,15 +71,15 @@ func PriceWarnCard(coin, price string) (err error) {
 		//Btntxt: "more",
 	}
 
-	err = client.SendCard(card)
+	err = c.SendCard(card)
 
 	return
 
 }
 
-func WarnText(context string) (err error) {
+func (c Client) WarnText(context string) (err error) {
 
-	err = client.SendText(context)
+	err = c.SendText(context)
 
 	return
 
