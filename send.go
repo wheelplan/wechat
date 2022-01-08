@@ -10,11 +10,11 @@ import (
 
 type Message struct {
 	Type    string
-	Context interface{}
+	Content interface{}
 }
 
 type Text struct {
-	Context string `json:"context"`
+	Content string `json:"content"`
 }
 
 func (c Client) Send(msg Message) (err error) {
@@ -29,7 +29,7 @@ func (c Client) Send(msg Message) (err error) {
 		"totag":   c.Totag,
 		"msgtype": msg.Type,
 		"agentid": c.Agentid,
-		msg.Type:  msg.Context,
+		msg.Type:  msg.Content,
 	}
 
 	url := fmt.Sprintf("https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=%s", token.AccessToken)
@@ -73,7 +73,7 @@ func (c Client) SendText(context string) (err error) {
 		"msgtype": "text",
 		"agentid": c.Agentid,
 		"text": map[string]interface{}{
-			"content": context,
+			"content": content,
 		},
 	}
 
