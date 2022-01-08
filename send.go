@@ -59,7 +59,7 @@ func (c Client) Send(msg Message) (err error) {
 	return
 }
 
-func (c Client) SendTXT(content string) (err error) {
+func (c Client) SendText(content string) (err error) {
 
 	msg := Message{
 		Type: "text",
@@ -72,7 +72,7 @@ func (c Client) SendTXT(content string) (err error) {
 
 }
 
-func (c Client) SendText(context string) (err error) {
+func (c Client) SendTextOld(context string) (err error) {
 
 	token, err := c.GetToken()
 	if err != nil {
@@ -215,6 +215,17 @@ type Card struct {
 }
 
 func (c Client) SendCard(textcard Card) (err error) {
+
+	msg := Message{
+		Type:    "textcard",
+		Content: textcard,
+	}
+
+	return c.Send(msg)
+
+}
+
+func (c Client) SendCardOld(textcard Card) (err error) {
 
 	token, err := c.GetToken()
 	if err != nil {
