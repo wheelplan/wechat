@@ -9,8 +9,8 @@ import (
 )
 
 type Message struct {
-	msgtype string
-	context interface{}
+	Type    string
+	Context interface{}
 }
 
 type Text struct {
@@ -24,12 +24,12 @@ func (c Client) Send(msg Message) (err error) {
 	}
 
 	params := map[string]interface{}{
-		"touser":    c.Touser,
-		"toparty":   c.Toparty,
-		"totag":     c.Totag,
-		"msgtype":   msg.msgtype,
-		"agentid":   c.Agentid,
-		msg.msgtype: msg.context,
+		"touser":  c.Touser,
+		"toparty": c.Toparty,
+		"totag":   c.Totag,
+		"msgtype": msg.Type,
+		"agentid": c.Agentid,
+		msg.Type:  msg.Context,
 	}
 
 	url := fmt.Sprintf("https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=%s", token.AccessToken)
