@@ -73,7 +73,7 @@ func (c Client) SendText(context string) (err error) {
 		"msgtype": "text",
 		"agentid": c.Agentid,
 		"text": map[string]interface{}{
-			"content": content,
+			"content": context,
 		},
 	}
 
