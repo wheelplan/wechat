@@ -214,11 +214,15 @@ type Card struct {
 	Btntxt      string `json:"btntxt"`
 }
 
-func (c Client) SendCard(textcard Card) (err error) {
+func (c Client) SendCard(title, description, url string) (err error) {
 
 	msg := Message{
-		Type:    "textcard",
-		Content: textcard,
+		Type: "textcard",
+		Content: Card{
+			Title:       title,
+			Description: description,
+			Url:         url,
+		},
 	}
 
 	return c.Send(msg)
