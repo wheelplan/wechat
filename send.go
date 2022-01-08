@@ -59,6 +59,20 @@ func (c Client) Send(msg Message) (err error) {
 	return
 }
 
+func (c Client) SendTXT(content string) (err error) {
+
+	var msg Message
+	var txt Text
+
+	msg.Type = "text"
+	msg.Content = txt
+
+	txt.Content = content
+
+	return c.Send(msg)
+
+}
+
 func (c Client) SendText(context string) (err error) {
 
 	token, err := c.GetToken()
