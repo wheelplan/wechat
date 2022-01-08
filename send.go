@@ -61,14 +61,13 @@ func (c Client) Send(msg Message) (err error) {
 
 func (c Client) SendTXT(content string) (err error) {
 
-	var msg Message
 	var txt Text
-
-	msg.Type = "text"
-	msg.Content = txt
-
 	txt.Content = content
 
+	var msg Message
+	msg.Type = "text"
+	msg.Content = txt
+	
 	return c.Send(msg)
 
 }
