@@ -29,7 +29,7 @@ func (c Client) BuyDogeCard(executedQty, avgPrice, cumQuote string) (err error) 
 		//Btntxt: "more",
 	}
 
-	err = c.SendCard(card)
+	err = c.SendCardOld(card)
 
 	return
 
@@ -52,7 +52,7 @@ func (c Client) SellDogeCard(executedQty, balance string) (err error) {
 		//Btntxt: "more",
 	}
 
-	err = c.SendCard(card)
+	err = c.SendCardOld(card)
 
 	return
 
@@ -71,7 +71,7 @@ func (c Client) PriceWarnCard(coin, price string) (err error) {
 		//Btntxt: "more",
 	}
 
-	err = c.SendCard(card)
+	err = c.SendCardOld(card)
 
 	return
 
@@ -79,7 +79,7 @@ func (c Client) PriceWarnCard(coin, price string) (err error) {
 
 func (c Client) WarnText(context string) (err error) {
 
-	err = c.SendText(context)
+	err = c.SendTextOld(context)
 
 	return
 
